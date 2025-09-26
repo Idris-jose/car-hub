@@ -5,7 +5,7 @@ export async function fetchcars() {
 		'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
      }
 
-    const response= await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {headers: headers,
+    const response= await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera', {headers: headers,
 
     });
     const result = await response.json()
@@ -43,18 +43,7 @@ export const updateSearchParams = (type: string, value: string) => {
   return newPathname;
 };
 
-export const deleteSearchParams = (type: string) => {
-  // Set the specified search parameter to the given value
-  const newSearchParams = new URLSearchParams(window.location.search);
 
-  // Delete the specified search parameter
-  newSearchParams.delete(type.toLocaleLowerCase());
-
-  // Construct the updated URL pathname with the deleted search parameter
-  const newPathname = `${window.location.pathname}?${newSearchParams.toString()}`;
-
-  return newPathname;
-};
 
 
 
